@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+        p {
+            color: black;
+            font-size: 12px;
+        }
+        </style>
+        <title>Practice 2</title>
+    </head>
+    <body>
+        <h1>Practice 2</h1>
+        <p id="customize">Customize This.</p>
+        <label for="width">Edit text width: </label>
+        <input type="number" id="width" value="">
+        <br>
+        <label for="R"> Text Color R (0-255):</label>
+        <input type="number" id="R" name="R" max="255" min="0"/>
+        <br>
+        <label for="G"> Text Color G (0-255):</label>
+        <input type="number" id="G" name="G" max="255" min="0"/>
+        <br>
+        <label for="B"> Text Color B (0-255):</label>
+        <input type="number" id="B" name="B" max="255" min="0"/>
+        <br>
+        <button onclick="edit()">Confirm Change</button>
+        <script>
+            function edit() {
+                var chosen_w = document.getElementById("width").value
+                var r = document.getElementById("R").value;
+                var g = document.getElementById("G").value;
+                var b = document.getElementById("B").value;
+                const custom = document.getElementById("customize");
+                custom.style.color = `rgb(${r}, ${g}, ${b})`;
+                custom.style.fontSize = chosen_w + "px";
+            }
+        </script>
+    </body>
+</html>
